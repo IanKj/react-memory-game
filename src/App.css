@@ -1,19 +1,36 @@
+body {
+  background-color: #EAE4E9;
+  display:flex;
+  justify-content: center;
+}
+
 img {
   height: 100px;
   width: 100px;
 }
 
 .pokemon-container {
-  width: 800px;
+  max-width: 730px;
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+  justify-content: space-evenly;
 }
 
 .card-container {
   border: 1px solid black;
   border-radius: 10px;
-  margin: 10px;
   text-align: center;
+  background-color: #FFF1E6;
+  transform: ease;
+  transition: 500ms;
+  margin-bottom: 10px;
+}
+
+.card-container:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 200ms;
 }
 
 .card-wrapper {
@@ -22,4 +39,99 @@ img {
 
 .card-wrapper p {
   margin: 0;
+  color: #234F58;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.lostBanner {
+  background: #E7236A;
+  border: 1px solid black;
+  position: absolute;
+  text-align: center;
+  width: 71%;
+  border-radius: 15px;
+  top: 9%;
+  left: 9%;
+  z-index: 1;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.content-container h1 {
+  color: #234F58;
+}
+
+.score-container {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+button {
+  background-color: #FBDAE6;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
+
+@media (max-width: 400px) {
+  .pokemon-container {
+    width: 100%;
+  }
+
+  .card-container:hover {
+   transform: none;
+   transition: none;
+  }
+
+   .card-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    width: 55px;
+    height: 60px;
+    margin: 5px;
+  }
+  .card-wrapper {
+    padding: 15px;
+  }
+  .card-container img {
+    width: 50%;
+    height: 50%;
+  }
+
+  .card-container p {
+      font-size: .6em;
+  }
+
+  .lost-banner h3 {
+    font-size: .2em;
+  }
 }

@@ -12,6 +12,9 @@ State
     Pokemon for the game
     Pokemon that have been picked
 
+
 Functions
-    generate custom amount of cards for game
+    generate custom amount of pokemon cards for game
     randomize pokemon
+    add pokemon id to clicked pokemon
+    check if ID already exists in clicked pokemon(SOME method)
